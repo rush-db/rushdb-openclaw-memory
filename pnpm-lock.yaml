@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@rushdb/agent-memory-contract':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.2.0
+        version: 0.2.0
       '@rushdb/javascript-sdk':
         specifier: ^2.11.0
         version: 2.11.0
@@ -480,8 +480,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushdb/agent-memory-contract@0.1.0':
-    resolution: {integrity: sha512-BSF62RZTgfTRM0u6PSK9Y139WHhBIr0xjQxHpYty2q5k4I4hCOOyS/UC5ledno+bzaOr5B32zCAUzyrlPmMmsA==}
+  '@rushdb/agent-memory-contract@0.2.0':
+    resolution: {integrity: sha512-so8ZxDjCNgNoSCh5cQlK+nM5YjKYnvzHJGR+uWIoNvV1hmOIQFV/yJfPIEbstvLVxvmTz7pyyVe5rH6FWdG8Wg==}
 
   '@rushdb/javascript-sdk@2.11.0':
     resolution: {integrity: sha512-c1tfEMcu2DnRuM6+eXG3sP9QWIgDgCG+yf2WR8kZJJBHbHTEiP2e/UWBAKJoXSff/Zu0sIpC4dwgV65v2WYDig==}
@@ -2343,7 +2343,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.62.4':
     optional: true
 
-  '@rushdb/agent-memory-contract@0.1.0':
+  '@rushdb/agent-memory-contract@0.2.0':
     dependencies:
       '@rushdb/javascript-sdk': 2.11.0
 

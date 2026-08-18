@@ -42,7 +42,7 @@
     "prepack": "pnpm build"
   },
   "dependencies": {
-    "@rushdb/agent-memory-contract": "^0.1.0",
+    "@rushdb/agent-memory-contract": "^0.2.0",
     "@rushdb/javascript-sdk": "^2.11.0"
   },
   "peerDependencies": {

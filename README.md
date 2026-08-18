@@ -68,7 +68,8 @@ pnpm check
 npm pack --dry-run
 ```
 
-`@rushdb/agent-memory-contract` must be available on npm before installing dependencies from a clean checkout.
+The provider-neutral AgentMemoryEvent v1 implementation is supplied by
+`@rushdb/agent-memory-contract`.
 
 ## Release
 
