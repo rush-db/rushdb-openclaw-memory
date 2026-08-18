@@ -1,0 +1,85 @@
+{
+  "name": "@rushdb/openclaw-memory",
+  "version": "0.1.0",
+  "description": "Additive, lifecycle-aware RushDB memory for OpenClaw",
+  "keywords": [
+    "openclaw",
+    "rushdb",
+    "agent-memory",
+    "persistent-memory",
+    "semantic-search",
+    "knowledge-graph"
+  ],
+  "license": "Apache-2.0",
+  "author": "RushDB",
+  "homepage": "https://docs.rushdb.com/connect/openclaw-memory",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rush-db/rushdb-openclaw-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rush-db/rushdb-openclaw-memory/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "openclaw.plugin.json"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "pnpm clean && tsc",
+    "types:check": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "pnpm types:check && pnpm test && pnpm build",
+    "prepack": "pnpm build"
+  },
+  "dependencies": {
+    "@rushdb/agent-memory-contract": "^0.1.0",
+    "@rushdb/javascript-sdk": "^2.11.0"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.8.1-beta.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.23",
+    "openclaw": "2026.8.1-beta.2",
+    "rimraf": "^6.0.1",
+    "typescript": "5.7.2",
+    "vitest": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "packageManager": "pnpm@10.1.0",
+  "openclaw": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "install": {
+      "npmSpec": "@rushdb/openclaw-memory",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.8.1-beta.2"
+    },
+    "compat": {
+      "pluginApi": ">=2026.8.1-beta.2"
+    },
+    "release": {
+      "bundleRuntimeDependencies": false,
+      "publishToClawHub": true,
+      "publishToNpm": true
+    }
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

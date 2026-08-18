@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.tgz
+.env
+.DS_Store
+.idea/
+.vscode/
+*.tsbuildinfo

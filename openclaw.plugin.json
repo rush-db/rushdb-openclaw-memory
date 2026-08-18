@@ -1,0 +1,62 @@
+{
+  "id": "rushdb-memory",
+  "name": "RushDB Memory",
+  "description": "Additive scope-safe persistent memory backed by RushDB. Keeps OpenClaw local memory active.",
+  "uiHints": {
+    "apiKey": {
+      "label": "RushDB API Key",
+      "sensitive": true,
+      "placeholder": "Prefer RUSHDB_API_KEY"
+    },
+    "url": {
+      "label": "RushDB API URL",
+      "placeholder": "https://api.rushdb.com/api/v1",
+      "advanced": true
+    },
+    "profileId": {
+      "label": "Memory Profile",
+      "placeholder": "default"
+    },
+    "scopeSalt": {
+      "label": "Scope Hash Salt",
+      "sensitive": true,
+      "placeholder": "Prefer RUSHDB_MEMORY_SCOPE_SALT",
+      "advanced": true
+    },
+    "localScopeId": {
+      "label": "Local Cross-Session Scope",
+      "help": "Optional stable identifier for cross-session recall in local/CLI conversations",
+      "advanced": true
+    },
+    "outboxPath": {
+      "label": "Durable Outbox Path",
+      "placeholder": "~/.openclaw/rushdb-memory/outbox",
+      "advanced": true
+    },
+    "autoRecall": { "label": "Automatic Recall" },
+    "autoCapture": { "label": "Automatic Capture" },
+    "recallTimeoutMs": {
+      "label": "Recall Timeout (ms)",
+      "advanced": true
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "apiKey": { "type": "string" },
+      "url": { "type": "string" },
+      "profileId": { "type": "string", "minLength": 1 },
+      "scopeSalt": { "type": "string" },
+      "localScopeId": { "type": "string" },
+      "outboxPath": { "type": "string" },
+      "autoRecall": { "type": "boolean" },
+      "autoCapture": { "type": "boolean" },
+      "recallTimeoutMs": {
+        "type": "integer",
+        "minimum": 50,
+        "maximum": 30000
+      }
+    }
+  }
+}
