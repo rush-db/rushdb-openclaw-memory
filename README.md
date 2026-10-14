@@ -8,7 +8,8 @@ The plugin recalls scope-authorized historical context before inference and dura
 
 - Node.js 22.14 or newer
 - OpenClaw 2026.8.1-beta.2 or newer
-- A RushDB project API key from [app.rushdb.com](https://app.rushdb.com)
+- A RushDB project API key from [app.rushdb.com](https://app.rushdb.com), or a standalone RushDB
+  engine and an embedding provider (see below)
 
 ## Install
 
@@ -23,6 +24,26 @@ export RUSHDB_API_KEY="your-project-api-key"
 ```
 
 Optionally set `RUSHDB_API_URL` for self-hosted RushDB and `RUSHDB_MEMORY_SCOPE_SALT` to make participant hashes deployment-specific.
+
+### A standalone RushDB engine
+
+Memory recall is a vector search. RushDB Cloud embeds memories for you; a standalone engine
+(`rushdbd`) does not, so give the plugin an OpenAI-compatible embedding provider:
+
+```bash
+export RUSHDB_ENGINE_URL="http://127.0.0.1:3000"
+export RUSHDB_ENGINE_TOKEN="your-engine-token"
+# export RUSHDB_ENGINE_SCOPE="tenant-1"   # only for an engine started with --multitenant
+export RUSHDB_EMBEDDING_API_KEY="sk-..."
+export RUSHDB_EMBEDDING_MODEL="text-embedding-3-small"
+export RUSHDB_EMBEDDING_DIMENSIONS="1536"
+# export RUSHDB_EMBEDDING_BASE_URL="https://api.openai.com/v1"   # any OpenAI-compatible endpoint
+```
+
+The same settings are accepted in the plugin config (`engineUrl`, `engineToken`, `engineScope`,
+`embeddingBaseUrl`, `embeddingApiKey`, `embeddingModel`, `embeddingDimensions`). With RushDB Cloud the
+embedding settings are optional: set them to embed on your side instead of with the managed model.
+Without a usable configuration the plugin stays disabled and logs why.
 
 ## Configure
 
