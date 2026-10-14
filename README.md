@@ -23,7 +23,7 @@ Set the API key in the OpenClaw gateway environment:
 export RUSHDB_API_KEY="your-project-api-key"
 ```
 
-Optionally set `RUSHDB_API_URL` for self-hosted RushDB and `RUSHDB_MEMORY_SCOPE_SALT` to make participant hashes deployment-specific.
+Optionally set `RUSHDB_API_URL` to use a different RushDB Cloud API endpoint and `RUSHDB_MEMORY_SCOPE_SALT` to make participant hashes deployment-specific.
 
 ### A standalone RushDB engine
 

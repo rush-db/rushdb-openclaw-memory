@@ -7,7 +7,7 @@ import {
 export interface OpenClawRushDBMemoryConfig {
   /** RushDB Cloud API key. */
   apiKey: string
-  /** RushDB Cloud (or self-hosted platform) API URL. */
+  /** RushDB Cloud API URL (defaults to the SDK's). */
   url?: string
   /** A standalone RushDB engine's URL, instead of RushDB Cloud. */
   engineUrl?: string
