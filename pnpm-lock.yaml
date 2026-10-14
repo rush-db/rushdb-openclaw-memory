@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@rushdb/agent-memory-contract':
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.3.0
+        version: 0.3.0
       '@rushdb/javascript-sdk':
-        specifier: ^2.11.0
-        version: 2.11.0
+        specifier: ^3.0.0
+        version: 3.0.0
     devDependencies:
       '@types/node':
         specifier: ^20.17.23
@@ -480,11 +480,13 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushdb/agent-memory-contract@0.2.0':
-    resolution: {integrity: sha512-so8ZxDjCNgNoSCh5cQlK+nM5YjKYnvzHJGR+uWIoNvV1hmOIQFV/yJfPIEbstvLVxvmTz7pyyVe5rH6FWdG8Wg==}
+  '@rushdb/agent-memory-contract@0.3.0':
+    resolution: {integrity: sha512-paIycxeoYswoOQb0XEdRiA4DzWdMcmw4L4oHrhQAOVDmLBojWoZIHJyIV0aT8+cQ/HQJohvIaFk5VZULTs9adA==}
+    engines: {node: '>=18.0.0', pnpm: '>=10.0.0'}
 
-  '@rushdb/javascript-sdk@2.11.0':
-    resolution: {integrity: sha512-c1tfEMcu2DnRuM6+eXG3sP9QWIgDgCG+yf2WR8kZJJBHbHTEiP2e/UWBAKJoXSff/Zu0sIpC4dwgV65v2WYDig==}
+  '@rushdb/javascript-sdk@3.0.0':
+    resolution: {integrity: sha512-4bDl+4OvaCsrdWrysAzpxES4j5rd/SjR/O21VIuYb8iHVQktBnczPud0KYuSC7N4lsJmn1jLkQ29CcvZpTp52A==}
+    engines: {node: '>=18.0.0', pnpm: '>=10.0.0'}
 
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
@@ -2343,11 +2345,11 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.62.4':
     optional: true
 
-  '@rushdb/agent-memory-contract@0.2.0':
+  '@rushdb/agent-memory-contract@0.3.0':
     dependencies:
-      '@rushdb/javascript-sdk': 2.11.0
+      '@rushdb/javascript-sdk': 3.0.0
 
-  '@rushdb/javascript-sdk@2.11.0': {}
+  '@rushdb/javascript-sdk@3.0.0': {}
 
   '@sec-ant/readable-stream@0.4.1': {}
 
