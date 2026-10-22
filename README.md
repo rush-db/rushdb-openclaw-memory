@@ -28,7 +28,7 @@ Optionally set `RUSHDB_API_URL` to use a different RushDB Cloud API endpoint and
 ### A standalone RushDB engine
 
 Memory recall is a vector search. RushDB Cloud embeds memories for you; a standalone engine
-(`rushdbd`) does not, so give the plugin an OpenAI-compatible embedding provider:
+(`rushdb`) does not, so give the plugin an OpenAI-compatible embedding provider:
 
 ```bash
 export RUSHDB_ENGINE_URL="http://127.0.0.1:3000"
