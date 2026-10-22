@@ -8,7 +8,7 @@ import {
   type RecallOptions,
   type RecalledMemory
 } from '@rushdb/agent-memory-contract'
-import { parseConfig } from './config.js'
+import { memoryClientOptions, parseConfig } from './config.js'
 import { hostAuthorizesPrivateConversation } from './host-authorization.js'
 import { latestConversationPair } from './messages.js'
 import { DurableEpisodeWriter } from './outbox.js'
@@ -53,20 +53,18 @@ function withTimeout<T>(task: Promise<T>, timeoutMs: number): Promise<T | null> 
 
 export function registerRushDBMemory(api: OpenClawPluginApi, overrides: OpenClawMemoryOverrides = {}): void {
   const config = parseConfig(api.pluginConfig)
-  if (!config.apiKey && !overrides.memory) {
+  const connection = overrides.memory ? undefined : memoryClientOptions(config)
+  if (connection && 'disabled' in connection) {
     api.registerService({
       id: 'rushdb-memory',
       start: () => {
-        api.logger.warn(
-          'rushdb-memory: disabled until RUSHDB_API_KEY or plugins.entries.rushdb-memory.config.apiKey is configured'
-        )
+        api.logger.warn(connection.disabled)
       }
     })
     return
   }
 
-  const memory =
-    overrides.memory ?? new RushDBAgentMemory({ apiKey: config.apiKey, url: config.url, recentLimit: 128 })
+  const memory = overrides.memory ?? new RushDBAgentMemory(connection!.options)
   const writer =
     overrides.writer ??
     new DurableEpisodeWriter(

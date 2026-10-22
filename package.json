@@ -1,6 +1,6 @@
 {
   "name": "@rushdb/openclaw-memory",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Additive, lifecycle-aware RushDB memory for OpenClaw",
   "keywords": [
     "openclaw",
@@ -42,8 +42,8 @@
     "prepack": "pnpm build"
   },
   "dependencies": {
-    "@rushdb/agent-memory-contract": "^0.2.0",
-    "@rushdb/javascript-sdk": "^2.11.0"
+    "@rushdb/agent-memory-contract": "^0.3.0",
+    "@rushdb/javascript-sdk": "^3.0.0"
   },
   "peerDependencies": {
     "openclaw": ">=2026.8.1-beta.2"
