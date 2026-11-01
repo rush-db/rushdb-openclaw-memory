@@ -12,7 +12,7 @@
   ],
   "license": "Apache-2.0",
   "author": "RushDB",
-  "homepage": "https://docs.rushdb.com/connect/openclaw-memory",
+  "homepage": "https://docs.rushdb.com/3.x/connect/openclaw-memory/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rush-db/rushdb-openclaw-memory.git"
