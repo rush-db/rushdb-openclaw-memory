@@ -8,8 +8,15 @@ The plugin recalls scope-authorized historical context before inference and dura
 
 - Node.js 22.14 or newer
 - OpenClaw 2026.8.1-beta.2 or newer
-- A RushDB project API key from [app.rushdb.com](https://app.rushdb.com), or a standalone RushDB
-  engine and an embedding provider (see below)
+- A RushDB project API key from [app.rushdb.com](https://app.rushdb.com), or self-hosted RushDB
+  and an embedding provider (see below)
+
+## Compatibility
+
+| Package | RushDB 3.x and RushDB Cloud | RushDB 2.x (legacy) |
+|---|---|---|
+| `@rushdb/openclaw-memory` | 0.2.x (needs `@rushdb/javascript-sdk` 3.x and `@rushdb/agent-memory-contract` 0.3.x) | 0.1.0 (`@rushdb/javascript-sdk` 2.11, `@rushdb/agent-memory-contract` 0.2) |
+| `@rushdb/javascript-sdk` | 3.x | 2.11.0: `npm i @rushdb/javascript-sdk@2` |
 
 ## Install
 
@@ -25,9 +32,9 @@ export RUSHDB_API_KEY="your-project-api-key"
 
 Optionally set `RUSHDB_API_URL` to use a different RushDB Cloud API endpoint and `RUSHDB_MEMORY_SCOPE_SALT` to make participant hashes deployment-specific.
 
-### A standalone RushDB engine
+### Self-hosted RushDB
 
-Memory recall is a vector search. RushDB Cloud embeds memories for you; a standalone engine
+Memory recall is a vector search. RushDB Cloud embeds memories for you; a self-hosted engine
 (`rushdb`) does not, so give the plugin an OpenAI-compatible embedding provider:
 
 ```bash
